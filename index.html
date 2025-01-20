@@ -278,13 +278,14 @@
 
 
 
+
 <section class="rsvp text-center" id="rsvp">
 
     <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>×</span>
                     </button>
                     <div class="section-padding">
                         <h3>Thank you!</h3>
@@ -338,6 +339,44 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Campo de asistencia -->
+                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="form-input-group">
+                                <i class="fa fa-question"></i>  <!-- Icono añadido-->
+                                <select name="attending" id="attending" required>
+                                    <option value="">Selecciona</option>
+                                    <option value="yes">Sí</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Campos condicionales (se mostrarán si eligen "sí") -->
+                    <div id="conditional-fields" style="display:none;">
+                        <div class="row">
+                             <div class="col-md-6 col-sm-6">
+                                <div class="form-input-group">
+                                    <i class="fa fa-cutlery"></i>  <!-- Icono añadido-->
+                                     <select name="food_preference" id="food_preference">
+                                        <option value="">Selecciona</option>
+                                        <option value="carne">Carne</option>
+                                        <option value="pescado">Pescado</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-6">
+                                <div class="form-input-group">
+                                     <i class="fa fa-glass"></i>  <!-- Icono añadido-->
+                                     <select name="alcohol" id="alcohol">
+                                        <option value="">Selecciona</option>
+                                        <option value="yes">Sí</option>
+                                        <option value="no">No</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-12" id="alert-wrapper"></div>
                     </div>
@@ -350,6 +389,24 @@
         </div>
     </div>
 </section>
+
+<script>
+    document.getElementById('attending').addEventListener('change', function() {
+        const conditionalFields = document.getElementById('conditional-fields');
+        if (this.value === 'yes') {
+            conditionalFields.style.display = 'block';
+            // Asegúrate de que los campos condicionales son requeridos al mostrarse
+             document.getElementById('food_preference').setAttribute('required', true);
+             document.getElementById('alcohol').setAttribute('required', true);
+        } else {
+            conditionalFields.style.display = 'none';
+            //Quita el atributo required al ocultarse
+            document.getElementById('food_preference').removeAttribute('required');
+            document.getElementById('alcohol').removeAttribute('required');
+        }
+    });
+</script>
+
 
 <footer>
     <div class="container">

@@ -105,67 +105,82 @@ h5 {
 }
 
 
-.rsvp {
-    background-color: #f9f9f9;
+
+#dress-code {
+    background-color: #fff;
 }
 
-.rsvp h3 {
+#dress-code h3 {
     margin-bottom: 20px;
 }
 
-.rsvp-form .form-group {
+#dress-code .dress-code-content {
+    margin-top: 30px;
+}
+
+#dress-code .dress-code-item {
     margin-bottom: 15px;
+    text-align: center;
+    display: flex; /* Usamos flexbox para el centrado vertical */
+    flex-direction: column; /* Alineamos los elementos verticalmente */
+    align-items: center; /* Centramos horizontalmente */
+    justify-content: center; /* Centramos verticalmente */
 }
 
-.rsvp-form .form-control {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width:100%;
-}
-
-.rsvp-form .btn {
-    margin: 5px;
-}
-
-.step {
-    display: none;
-}
-
-.step.active {
+#dress-code .dress-code-img {
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    max-width: 150px; /* Ancho máximo de la imagen (ajusta según necesites) */
+    height: auto;
+    aspect-ratio: 1/1; /* Establece la relación de aspecto 1:1 (cuadrado) */
+    object-fit: cover; /* Recorta la imagen para que encaje en el cuadrado */
+    margin-bottom: 10px;
     display: block;
-}
-.rsvp-form .radio label{
-  margin-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#rsvp-message {
-  display: none;
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  background-color: #fff;
+#dress-code h4 {
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    text-align: center;
 }
-.rsvp-form button{
-   margin: 10px;
+
+ul.color-palette {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+ul.color-palette li {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 5px;
+    border: 1px solid #ddd;
 }
 
 
 .btn {
-  font-size: 13px;
-  border: solid 2px;
-  -moz-border-radius: 40px;
-  -webkit-border-radius: 40px;
-  border-radius: 40px;
-  display: inline-block;
-  text-transform: uppercase;
+    font-size: 13px;
+    border: solid 2px;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    display: inline-block;
+    text-transform: uppercase;
+    color: #624e2b;
+    font-weight: 700;
 }
 
 .btn:hover,
 .btn:focus {
   color: #fff;
-  border-color: #e8ca6f;
-  background-color: #e8ca6f;
+  border-color: #a1801d;
+  background-color: #a1801d;
 }
 
 .btn-white {
@@ -186,13 +201,13 @@ h5 {
 
 .btn-fill {
   color: #fff;
-  border: solid 2px #e8ca6f;
+  border: solid 2px #ffb629;
   -moz-border-radius: 40px;
   -webkit-border-radius: 40px;
   border-radius: 40px;
   display: inline-block;
   text-transform: uppercase;
-  background-color: #e8ca6f;
+  background-color: #ffb629;
 }
 
 .btn-fill:hover,
@@ -208,6 +223,8 @@ h5 {
 
 .btn-large {
   padding: 15px 40px;
+  margin-bottom:70px;
+  background: #e8ca6fe8;
 }
 
 .btn-margin-right {
@@ -217,7 +234,7 @@ h5 {
 section.intro,
 section.features-extra,
 section.rsvp {
-  background: #fff;
+  background: #75c9e3;
 }
 
 section.features,
@@ -558,13 +575,15 @@ section .header {
   position: fixed;
   width: 100%;
   z-index: 999;
+  top:-150px;
 }
 
 .fixed {
   position: fixed;
-  background-color: rgba(55, 36, 40, .88);
+  background-color: rgba(50, 50, 50, .88);
   z-index: 999;
   width: 100%;
+  top:0;
 }
 
 header {
@@ -1080,6 +1099,72 @@ header .member-actions {
   pointer-events: auto;
 }
 
+
+/* ... RSVP .................................................. */
+
+/* ... (resto del CSS sin modificar) ... */
+
+.rsvp {
+  background-color: #f9f9f9;
+}
+
+.rsvp h3 {
+  margin-bottom: 20px;
+  color:#1e666b;
+  margin-top:44px;
+}
+
+.rsvp h4 {
+	margin-top: 4px;
+    margin-bottom: 17px;
+    color: #fff;
+}
+
+.rsvp p {
+  color:#fff;
+}
+
+.rsvp-form .form-group {
+  margin-bottom: 15px;
+}
+
+.rsvp-form .form-control {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.rsvp-form .btn {
+  margin: 5px;
+}
+
+.step {
+  display: none;
+}
+
+.step.active {
+  display: block;
+}
+
+.rsvp-form .radio label {
+  margin-right: 20px;
+}
+
+#rsvp-message {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.rsvp-form button {
+  margin: 0px;
+}
+
+/* ... (resto del CSS sin modificar) ... */
+
 .rsvp {
   padding-bottom: 140px;
 }
@@ -1088,7 +1173,9 @@ header .member-actions {
   padding: 15px 0;
   border-radius: 3px;
   width: 100%;
-  font-size: 13px;
+  font-size: 19px;
+  font-weight:500;
+  letter-spacing:2px;
 }
 
 .rsvp .rsvp-form .form-input-group {
@@ -1104,9 +1191,9 @@ header .member-actions {
 }
 
 .rsvp .rsvp-form .form-input-group i {
-  color: #e8ca6f;
+  color: #ffffffd4;
   font-size: 14px;
-     position: absolute;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   margin-left: 20px;
@@ -1135,7 +1222,8 @@ header .member-actions {
 }
 
 .rsvp .rsvp-form .form-input-group input,
-.rsvp .rsvp-form .form-input-group select {
+.rsvp .rsvp-form .form-input-group select,
+.rsvp .rsvp-form .form-input-group textarea {
   padding-left: 68px;
   width: 100%;
   height: 100%;
@@ -1150,27 +1238,36 @@ header .member-actions {
 }
 
 .rsvp .rsvp-form .form-input-group input::-webkit-input-placeholder {
-  color: #bcc1c3;
+  color: #fff;
+  font-weight:500;
+  font-size:12pt;
 }
 
 .rsvp .rsvp-form .form-input-group input:-moz-placeholder {
-  color: #bcc1c3;
+  color: #fff;
+  font-weight:500;
+  font-size:12pt;
 }
 
 .rsvp .rsvp-form .form-input-group input::-moz-placeholder {
-  color: #bcc1c3;
+  color: #fff;
+  font-weight:500;
+  font-size:12pt;
 }
 
 .rsvp .rsvp-form .form-input-group input:-ms-input-placeholder {
-  color: #bcc1c3;
+  color: #fff;
+  font-weight:500;
+  font-size:12pt;
 }
 
 .rsvp .rsvp-form .form-input-group select {
-    color: #bcc1c3;
-     padding-right: 30px;
-     padding-top: 2px;
+  color: #fff;
+  font-weight:500;
+  font-size:12pt;
+  padding-right: 30px;
+  padding-top: 2px;
 }
-
 
 .rsvp .rsvp-form .form-input-group select option {
   color: #000;
@@ -1178,15 +1275,120 @@ header .member-actions {
 
 /* Estilo para la flecha del select */
 .rsvp .rsvp-form .form-input-group select {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23e8ca6f'><polygon points='0,0 12,0 6,12'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23ffffffd4'><polygon points='0,0 12,0 6,12'/></svg>");
   background-repeat: no-repeat;
   background-position: right 10px center;
   background-size: 12px;
 }
-/*IE*/
+
+/* IE */
 .rsvp .rsvp-form .form-input-group select::-ms-expand {
-    display: none;
+  display: none;
 }
+
+/* Estilos para el contenedor de checkboxes */
+.form-checkbox-container {
+  width: 100%;
+  margin: 0 auto 10px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: solid 1px #e6e9ea;
+  text-align: left;
+  padding: 15px 20px;
+}
+
+/* Grupo de checkboxes */
+.form-checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Checkboxes visibles y accesibles */
+.form-checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #fff;
+  appearance: none; /* Evita el diseño por defecto */
+  accent-color: #e8ca6f; /* Color visible */
+  position: relative;
+}
+
+/* Al marcar el checkbox */
+.form-checkbox-group input[type="checkbox"]:checked {
+  background-color: #1e666b;
+  border-color: #1e666b;
+  left:6px;
+}
+
+/* Estilo para el "tick" */
+.form-checkbox-group input[type="checkbox"]:checked::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 4px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity:1;
+}
+
+/* Estilo para el texto del label */
+.form-checkbox-group label {
+  color: #fff;
+  font-weight:500;
+  font-size:12pt;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom:0px;
+}
+
+
+
+/* Cambia el cursor al pasar el ratón */
+.form-checkbox-group label:hover input[type="checkbox"] {
+  border-color: #b8a041;
+}
+
+ /* Estilo para la caja de texto larga */
+.rsvp .rsvp-form .form-input-group-large{  /*AÑADIDO*/
+    width: 100%;
+    height: auto;
+   margin: 0 auto 10px;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   border-radius: 5px;
+   border: solid 1px #e6e9ea;
+   text-align: left;
+   position: relative;
+   color:#fff;
+ }
+ .rsvp .rsvp-form .form-input-group-large textarea {
+     padding-left: 68px;
+	 margin-top: 10px;
+   width: 100%;
+   height: 150px; /* Establecer altura para el textarea */
+   -moz-border-radius: 6px;
+   -webkit-border-radius: 6px;
+   border-radius: 6px;
+   border: none;
+     -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+     background: none;
+	 color:#fff;
+ }
+/* ... (resto del CSS sin modificar) ... */
+
+/* ... RSVP .................................................. */
 
 footer .content {
   border-top: 1px solid #e6e9ea;

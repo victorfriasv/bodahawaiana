@@ -184,30 +184,28 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "Boda Hawaiana - Antonio y Víctor",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('Sep 13, 2025 13:00'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
+            end: new Date('Sep 13, 2025 23:59'),
 
             // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
+            address: 'La Casita de Pinto',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210."
+            description: "No olvides confirmar tu asistencia en la web! Si tienes cualquier problema o imprevisto, llámanos."
         }
     });
 
     $('#add-to-cal').html(myCalendar);
 
-
-    /********************** RSVP **********************/
 /********************** RSVP **********************/
 $('#rsvp-form').on('submit', function (e) {
     e.preventDefault();
@@ -216,13 +214,8 @@ $('#rsvp-form').on('submit', function (e) {
 
     $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
 
-    // Validación del código de invitación (SIN CAMBIOS)
-    if (MD5($('#invite_code').val()) !== 'b0e53b10c1f55ede516b240036b88f40'
-        && MD5($('#invite_code').val()) !== '2ac7f43695eb0479d5846bb38eec59cc') {
-        $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
-    } else {
         // Envía los datos, incluyendo los nuevos campos
-        $.post('https://script.google.com/macros/s/AKfycbwRyvYxGADHHI6M9yzJuR-jZg-zH1dy0-2sNK5pGkkf-QSN2WkD61F_F-6JTBuFwXY9zQ/exec', data)
+        $.post('https://script.google.com/macros/s/AKfycbyR2EpiMbRiJLK1GA1j0M4bL7N9NnmmfzKIKeQVICJTf_94BjkI0kokI92fC82GMxS-AQ/exec', data)
             .done(function (data) {
                 console.log(data);
                 if (data.result === "error") {
@@ -236,9 +229,53 @@ $('#rsvp-form').on('submit', function (e) {
                 console.log(data);
                 $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
             });
-    }
 });
+    document.getElementById('attending').addEventListener('change', function() {
+        const question2 = document.getElementById('question2');
+        const question3 = document.getElementById('question3');
+        const question4 = document.getElementById('question4');
+        const question5 = document.getElementById('question5');
 
+        // Oculta todas las preguntas opcionales
+        question2.style.display = 'none';
+        question3.style.display = 'none';
+        question4.style.display = 'none';
+        question5.style.display = 'none';
+
+         //Quita el atributo required al ocultarse
+        document.getElementById('food_preference').removeAttribute('required');
+         document.getElementById('transport').removeAttribute('required');
+
+        if (this.value === 'yes_full' || this.value === 'yes_ceremony_food' ) {
+            // Si selecciona sí, muestra preguntas 2, 4 y 5
+            question2.style.display = 'block';
+             question4.style.display = 'block';
+            question5.style.display = 'block';
+             document.getElementById('food_preference').setAttribute('required', true);
+             document.getElementById('transport').setAttribute('required', true);
+
+        } else if(this.value === 'yes_coffee') {
+            // Si selecciona sí, muestra preguntas 4 y 5
+           question4.style.display = 'block';
+            question5.style.display = 'block';
+            document.getElementById('transport').setAttribute('required', true);
+        } else if(this.value === 'no'){
+          // Si selecciona no, muestra la pregunta 3
+            question3.style.display = 'block';
+        }
+    });
+
+    document.getElementById('invite_code').addEventListener('input', function(){
+        const inviteCode = this.value;
+        const question6 = document.getElementById('question6');
+
+         if (inviteCode.startsWith('0')) {
+              question6.style.display = 'block';
+           } else {
+               question6.style.display = 'none';
+            }
+
+      });
 });
 
 /********************** Extras **********************/

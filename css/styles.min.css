@@ -1114,6 +1114,8 @@ header .member-actions {
   margin-top:44px;
 }
 
+
+
 .rsvp h4 {
 	margin-top: 4px;
     margin-bottom: 17px;
@@ -1235,6 +1237,9 @@ header .member-actions {
   -moz-appearance: none;
   appearance: none;
   background: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 12pt;
 }
 
 .rsvp .rsvp-form .form-input-group input::-webkit-input-placeholder {
@@ -1386,7 +1391,145 @@ header .member-actions {
      background: none;
 	 color:#fff;
  }
-/* ... (resto del CSS sin modificar) ... */
+
+/* Cambiar el color del placeholder del textarea */
+textarea::placeholder {
+    color: #fff; /* Cambiar el color a blanco */
+    opacity: 1; /* Asegura que el color sea completamente visible */
+}
+
+/* Si necesitas aplicarlo a un textarea específico, usa un selector más preciso */
+textarea[name="message"]::placeholder {
+  color: #fff;
+  font-weight:500;
+  font-size:12pt;
+    opacity: 1;
+}
+ 
+ 
+ .custom-textarea-placeholder {
+  color: #fff;
+  font-weight:500;
+  font-size:12pt;
+}
+ 
+
+
+
+#gifts {
+    background-color: #f3dfa1;
+}
+
+.gifts-image {
+    max-width: 150px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.gifts-list {
+    padding-left: 0;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.gifts-list li {
+    display: block;
+     margin-bottom: 15px;
+    color: #3d4351;
+    padding-left: 30px; /* Aumentado el padding para el icono */
+    position: relative;
+    font-size: 1.2em; /* Tamaño del texto de la lista más grande */
+}
+
+.gifts-list li::before {
+     content: "\f00c"; /* Icono de check de Font Awesome (puedes usar otro) */
+    font-family: FontAwesome;
+    position: absolute;
+    left: 0;
+    top: 0;
+     color: #a1801d;
+    font-size: 20px; /* Ajusta el tamaño del icono */
+}
+
+.gifts-list li strong {
+    font-weight: 500;
+}
+.striked{
+  text-decoration: line-through;
+  opacity: 0.6; /* Agrega un poco de transparencia si lo deseas */
+}
+
+
+/* ... (estilos existentes) ... */
+
+#wedshoot {
+    background-color: #f0f6f7;
+}
+
+#wedshoot .header {
+    margin-bottom: 20px;
+}
+
+#wedshoot p {
+    color: #555;
+}
+
+#wedshoot h4 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+#wedshoot .qr-code-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#wedshoot .qr-code-image {
+    max-width: 200px;
+    height: auto;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+#wedshoot .qr-code-description {
+    color: #555;
+}
+
+#wedshoot .app-download-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#wedshoot .app-download-container p {
+    margin-bottom: 10px;
+}
+
+#wedshoot .app-buttons-container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los botones */
+    gap: 10px;
+    margin-bottom: 10px;
+}
+#wedshoot .app-buttons-container .app-button {
+   display: inline-block;
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+}
+
+#wedshoot .app-buttons-container img {
+  height: 50px;
+}
+
+#wedshoot .app-download-description {
+    color: #555;
+    margin-top: 5px;
+}
+
+/* ... (estilos existentes) ... */
+
 
 /* ... RSVP .................................................. */
 

@@ -212,10 +212,10 @@ $('#rsvp-form').on('submit', function (e) {
     // Recoge todos los datos del formulario
     var data = $(this).serialize();
 
-    $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
+    $('#alert-wrapper').html(alert_markup('info', '<strong>Espera un momento.</strong> Estamos guardando tus respuestas.'));
 
         // Envía los datos, incluyendo los nuevos campos
-        $.post('https://script.google.com/macros/s/AKfycbyR2EpiMbRiJLK1GA1j0M4bL7N9NnmmfzKIKeQVICJTf_94BjkI0kokI92fC82GMxS-AQ/exec', data)
+        $.post('https://script.google.com/macros/s/AKfycbzhe-5GkzNKPC-XqxLqqvEgclcQfuu1_a_EBeduVM7gw6A9MZZeq_9fh7UmWuYDwO4cnA/exec', data)
             .done(function (data) {
                 console.log(data);
                 if (data.result === "error") {
@@ -227,7 +227,7 @@ $('#rsvp-form').on('submit', function (e) {
             })
             .fail(function (data) {
                 console.log(data);
-                $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> There is some issue with the server. '));
+                $('#alert-wrapper').html(alert_markup('danger', '<strong>Ha ocurrido un error.</strong> Prueba en unos minutos o contacta con nosotros. '));
             });
 });
     document.getElementById('attending').addEventListener('change', function() {
@@ -246,7 +246,7 @@ $('#rsvp-form').on('submit', function (e) {
         document.getElementById('food_preference').removeAttribute('required');
          document.getElementById('transport').removeAttribute('required');
 
-        if (this.value === 'yes_full' || this.value === 'yes_ceremony_food' ) {
+        if (this.value === 'Si_full' || this.value === 'Si_comida' ) {
             // Si selecciona sí, muestra preguntas 2, 4 y 5
             question2.style.display = 'block';
              question4.style.display = 'block';
@@ -254,12 +254,12 @@ $('#rsvp-form').on('submit', function (e) {
              document.getElementById('food_preference').setAttribute('required', true);
              document.getElementById('transport').setAttribute('required', true);
 
-        } else if(this.value === 'yes_coffee') {
+        } else if(this.value === 'Si_cafe') {
             // Si selecciona sí, muestra preguntas 4 y 5
            question4.style.display = 'block';
             question5.style.display = 'block';
             document.getElementById('transport').setAttribute('required', true);
-        } else if(this.value === 'no'){
+        } else if(this.value === 'No'){
           // Si selecciona no, muestra la pregunta 3
             question3.style.display = 'block';
         }

@@ -294,8 +294,8 @@
             <span>×</span>
           </button>
           <div class="section-padding">
-            <h3>Thank you!</h3>
-            <p>We are glad to see you join us on our big day.</p>
+            <h3>¡Se ha enviado!</h3>
+            <p>Para cualquier modificación, vuelve a enviar el formulario o ponte en contacto con nosotros.</p>
             <div id="add-to-cal"></div>
           </div>
         </div>
@@ -332,14 +332,14 @@
                </div>
            </div>
            <!-- Pregunta 6: Acompañante -->
-          <div class="row" id="question6" style="display:none;">
+<!--           <div class="row" id="question6" style="display:none;">
             <div class="col-md-12">
                 <div class="form-input-group">
                      <i class="fa fa-user-plus"></i>
                     <input type="text" name="companion" class="" placeholder="¿Quién es tu acompañante? (Nombre y Apellido)" >
                  </div>
             </div>
-           </div>
+           </div> -->
             <!-- Pregunta 1: Vas a asistir -->
             <div class="row">
               <div class="col-md-12">
@@ -347,10 +347,10 @@
                     <i class="fa fa-question"></i>
                     <select name="attending" id="attending" required>
                         <option value="">¿Vas a asistir?</option>
-                        <option value="yes_full">Sí, de principio a fin</option>
-                        <option value="yes_ceremony_food">Sí, ceremonia y comida</option>
-                        <option value="yes_coffee">Sí, pero sólo pasaré a tomar el café</option>
-                        <option value="no">No, sorry :(</option>
+                        <option value="Si_full">Sí, de principio a fin</option>
+                        <option value="Si_comida">Sí, ceremonia y comida</option>
+                        <option value="Si_cafe">Sí, pero sólo pasaré a tomar el café</option>
+                        <option value="No">No, sorry :(</option>
                     </select>
                   </div>
               </div>
@@ -360,7 +360,7 @@
             <div class="col-md-12">
                 <div class="form-input-group form-input-group-large">
                     <i class="fa fa-comment"></i>
-                    <textarea name="message" class="" placeholder="Oh! Es una pena que no puedas venir, sabemos que nos quieres, pero no pasa nada, no te guardamos rencor, escríbenos un mensaje bonito y al menos sácanos una lagrimilla"></textarea>
+                    <textarea name="message" class="" placeholder="Oh! Es una pena que no puedas venir, sabemos que nos quieres, pero no pasa nada, no te guardamos rencor, escríbenos en este campo un mensaje bonito y al menos sácanos una lagrimilla"></textarea>
                 </div>
             </div>
           </div>
@@ -370,9 +370,9 @@
                   <div class="form-input-group">
                       <i class="fa fa-cutlery"></i>
                       <select name="food_preference" id="food_preference">
-                          <option value="">Selecciona</option>
-                          <option value="carne">A tope con la carne</option>
-                          <option value="verduras">Yo iré full verduritas y piña</option>
+                          <option value="">¿Vas a querer comer carne tipo barbacoa?</option>
+                          <option value="Carne">A tope con la carne</option>
+                          <option value="Verdura">Yo iré full verduritas y piña</option>
                        </select>
                   </div>
               </div>
@@ -384,28 +384,28 @@
                   <div class="form-checkbox-container">
                       <h4>¿Qué beberás? (elige tus preferencias)</h4>
                       <div class="form-checkbox-group">
-                            <label><input type="checkbox" name="drinks[]" value="cerveza">Cerveza</label>
+                            <label><input type="checkbox" name="drinks" value="Cerveza">Cerveza</label>
                       </div>
                       <div class="form-checkbox-group">
-                           <label><input type="checkbox" name="drinks[]" value="ron">Ron</label>
+                           <label><input type="checkbox" name="drinks" value="Ron">Ron</label>
                       </div>
                       <div class="form-checkbox-group">
-                           <label><input type="checkbox" name="drinks[]" value="ginebra">Ginebra</label>
+                           <label><input type="checkbox" name="drinks" value="Ginebra">Ginebra</label>
                       </div>
                       <div class="form-checkbox-group">
-                         <label><input type="checkbox" name="drinks[]" value="vino_blanco">Vino Blanco</label>
+                         <label><input type="checkbox" name="drinks" value="VinoBlanco">Vino Blanco</label>
                       </div>
                       <div class="form-checkbox-group">
-                         <label><input type="checkbox" name="drinks[]" value="vino_tinto">Vino Tinto</label>
+                         <label><input type="checkbox" name="drinks" value="VinoTinto">Vino Tinto</label>
                       </div>
                        <div class="form-checkbox-group">
-                           <label><input type="checkbox" name="drinks[]" value="vermut">Vermut</label>
+                           <label><input type="checkbox" name="drinks" value="Vermut">Vermut</label>
                        </div>
                         <div class="form-checkbox-group">
-                           <label><input type="checkbox" name="drinks[]" value="refrescos">Refrescos</label>
+                           <label><input type="checkbox" name="drinks" value="Refrescos">Refrescos</label>
                         </div>
                        <div class="form-checkbox-group">
-                           <label><input type="checkbox" name="drinks[]" value="agua">Agua</label>
+                           <label><input type="checkbox" name="drinks" value="Agua">Agua</label>
                         </div>
                   </div>
               </div>
@@ -417,9 +417,9 @@
                 <div class="form-input-group">
                     <i class="fa fa-bus"></i>
                     <select name="transport" id="transport">
-                         <option value="">Selecciona</option>
-                         <option value="yes_alcohol">Sí, sólo habrá alcohol en mis venas</option>
-                        <option value="no_by_my_own">No, voy por mi cuenta o con algún colega</option>
+                         <option value="">¿Necesitarás transporte de Pinto a la finca?</option>
+                         <option value="ConTransporte">Sí, sólo habrá alcohol en mis venas</option>
+                        <option value="SinTransporte">No, voy por mi cuenta o con algún colega</option>
                     </select>
                  </div>
              </div>
@@ -484,6 +484,89 @@
 
       });
 </script>
+
+
+<section id="gifts" class="section-padding" style="background-color: #f3dfa1;">
+    <div class="container">
+        <div class="row section-padding">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#gifts-modal">
+                    <i class="fa fa-gift"></i>  Lista de Regalos
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="gifts-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>×</span>
+                    </button>
+                    <div class="text-center">
+                        <img src="img/gift-image.png" alt="Regalos de Boda" class="gifts-image">
+                        <h3 class="section-padding">Nuestra épica lista de regalos</h3>
+                    </div>
+                     <p class="text-center">Sabemos que os morís de ganas de regalarnos algo, así que aquí van algunas ideas para todos los bolsillos:</p>
+                     <ul class="gifts-list">
+                        <li>Una postal de tu pueblo</li>
+                        <li>Un vale de 5€ de Amazon</li>
+                        <li>Una lata de atún en aceite de oliva</li>
+                         <li class="striked">Un viaje a la luna</li>
+                        <li>Un billete de lotería</li>
+                        <li>Un cheque de 10€ de la tienda de la esquina</li>
+                        <li>Los gastos de la luna de miel al completo</li>
+                         <li>Un paseo en burro por el campo</li>
+                        <li class="striked">Un Ferrari rojo</li>
+                        <li>Una bolsa de chuches de la tienda</li>
+                         <li>Un ático en Madrid con piscina</li>
+                        <li>Una noche de karaoke en casa</li>
+                        <li>Una suscripción a tu revista favorita</li>
+                          <li>Un ramo de flores del supermercado</li>
+                     </ul>
+                    <p class="text-center">O si tienes algo mejor, ¡sorpréndenos!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="wedshoot" class="section-padding" style="background-color:#f0f6f7;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Comparte tus fotos de la boda</h3>
+                <p>¡Nos encantaría ver tu perspectiva de nuestro gran día! Escanea el código QR o descarga la app WedShoots para compartir tus fotos y videos.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <h4>Escanea el código QR</h4>
+                <div class="qr-code-container">
+                    <img src="img/qr-wedshoot.png" alt="Código QR WedShoots" class="qr-code-image">
+                    <p class="qr-code-description">Abre la cámara de tu móvil y escanea este código.</p>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <h4>Descarga la app WedShoots</h4>
+                <div class="app-download-container">
+                    <p>Si prefieres usar la app WedShoots, descárgala desde aquí:</p>
+                    <div class="app-buttons-container">
+                         <a href="https://app.appsflyer.com/net.bodas.android.wedshoots?pid=WP-Android-ES&c=WP-ES-LANDINGS"
+                           target="_blank" class="app-button">
+                            <img src="img/google-play-badge.svg" alt="Descargar en Google Play">
+                         </a>
+                        <a href="https://app.appsflyer.com/id660256196?pid=WP-iOS-ES&c=WP-ES-LANDINGS&s=es"
+                           target="_blank" class="app-button">
+                            <img src="img/apple-store-badge.svg" alt="Descargar en App Store">
+                         </a>
+                    </div>
+                    <p class="app-download-description">Código de la boda: <strong>XXXXX</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <footer>
     <div class="container">

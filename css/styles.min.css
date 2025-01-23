@@ -32,6 +32,7 @@ p {
     margin-left: 0 !important;
     margin-right: 0 !important;
     margin-bottom: 25px;
+	margin-top:12px;
 }
 
 .map-full-width-iframe iframe {
@@ -60,7 +61,7 @@ h3 {
   font-size: 24px;
   font-weight: 709;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 1px;
 }
 
 h4 {
@@ -133,6 +134,7 @@ h5 {
      display: flex;
      flex-wrap: wrap;
     justify-content: center;
+	
 }
 
 #dress-code h4 {
@@ -172,6 +174,8 @@ h5 {
   max-width: 400px;
   box-sizing: border-box;
   margin-bottom: 20px;
+      margin-right: 0;
+    margin-left: -19px;
 }
 
 
@@ -186,6 +190,8 @@ h5 {
      width: 135%;
      max-width: 400px;
      box-sizing: border-box;
+	     margin-left: -4px;
+    margin-right: -4px;
 }
 
 .dress-code-list.allowed li{
@@ -197,6 +203,7 @@ h5 {
 .dress-code-list.not-allowed li{
   background-color: #fde7e5;
     border: 1px solid #f4c6c3;
+	    width: 146%;
 }
 
 
@@ -271,6 +278,16 @@ h5 {
 }
 /* ... (estilos existentes) ... */
 
+/* Media query para pantallas estrechas (ejemplo: menos de 768px) */
+@media (max-width: 768px) {
+  .color-palette-container {
+      flex-direction: column; /* Apila las columnas una debajo de otra */
+    align-items: center; /* Centra los elementos horizontalmente */
+      }
+    .color-palette-column:first-child { /*Añadido para separar las paletas*/
+        margin-right: 0;
+    }
+}
 
 
 .btn {
@@ -1374,6 +1391,8 @@ header .member-actions {
   font-weight:500;
   font-size:12pt;
 }
+
+
 
 .rsvp .rsvp-form .form-input-group select {
   color: #fff;

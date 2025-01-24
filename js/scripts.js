@@ -215,7 +215,7 @@ $('#rsvp-form').on('submit', function (e) {
     $('#alert-wrapper').html(alert_markup('info', '<strong>Espera un momento.</strong> Estamos guardando tus respuestas.'));
 
         // Envía los datos, incluyendo los nuevos campos
-        $.post('https://script.google.com/macros/s/AKfycbwMN41KYmD_dlPvF1vO9-JqfHWAac27rh5mTsRSLCMl7AzF0Ycuie7qAb5WTeCvO-kEnQ/exec', data)
+        $.post('https://script.google.com/macros/s/AKfycbx1xHf-BLEoFoD48JvGLJNn9bBCCcaDMQvC4L61A1uqU8jPYj7sb2S_MO9TQd_whxa3QA/exec', data)
             .done(function (data) {
                 console.log(data);
                 if (data.result === "error") {

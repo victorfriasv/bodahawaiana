@@ -1435,8 +1435,10 @@ header .member-actions {
 .form-checkbox-group {
   display: flex;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
+
+
 
 /* Checkboxes visibles y accesibles */
 .form-checkbox-group input[type="checkbox"] {

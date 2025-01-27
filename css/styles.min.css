@@ -1505,6 +1505,27 @@ header .member-actions {
    position: relative;
    color:#fff;
  }
+ 
+ /* Opcional: Mejorar la apariencia del scroll */
+.rsvp .rsvp-form .form-input-group-large textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+.rsvp .rsvp-form .form-input-group-large textarea::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.rsvp .rsvp-form .form-input-group-large textarea::-webkit-scrollbar-thumb {
+    background: #1e666b;
+    border-radius: 4px;
+}
+
+.rsvp .rsvp-form .form-input-group-large textarea::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+ 
+ 
  .rsvp .rsvp-form .form-input-group-large textarea {
      padding-left: 68px;
 	 margin-top: 10px;
@@ -1519,6 +1540,8 @@ header .member-actions {
    appearance: none;
      background: none;
 	 color:#fff;
+	     resize: none;
+    overflow-y: auto;
  }
 
 /* Cambiar el color del placeholder del textarea */

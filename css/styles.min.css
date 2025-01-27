@@ -184,11 +184,12 @@ h5 {
     align-items: center;
     margin-bottom: 10px;
     color: #3d4351;
-    font-size: 1.1em;
+    font-size: 1.2em;
+    font-weight: 400;
     padding: 10px;
     border-radius: 8px;
      width: 135%;
-     max-width: 400px;
+     max-width: 310px;
      box-sizing: border-box;
 	     margin-left: -4px;
     margin-right: -4px;
@@ -210,6 +211,8 @@ h5 {
   background-color: #fde7e5;
     border: 1px solid #f4c6c3;
 	    width: 146%;
+		    padding-left: 80px;
+    padding-right: 94px !important;
 }
 
 
@@ -259,7 +262,7 @@ h5 {
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2376d7c455' d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") 
                 center/contain no-repeat;
     right: 15px;
-    transform: translateY(-50%) rotate(2deg) scale(2);
+    transform: translateY(-50%) rotate(2deg) scale(2.4);
 	
 }
 

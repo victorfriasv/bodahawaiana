@@ -171,7 +171,7 @@ h5 {
    padding-left: 15px;
     padding-right: 15px;
   width: 100%;
-  max-width: 400px;
+  max-width: 432px;
   box-sizing: border-box;
   margin-bottom: 20px;
       margin-right: 0;
@@ -192,6 +192,12 @@ h5 {
      box-sizing: border-box;
 	     margin-left: -4px;
     margin-right: -4px;
+	position: relative; /* Permite posicionar la imagen de forma absoluta */
+    overflow: visible; /* Permite que la imagen desborde el contenedor */
+    padding-left: 100px; /* Espacio para la imagen desbordante */
+    min-height: 100px; /* Altura mínima para contener la imagen inclinada */
+    padding-right: 80px !important; /* Espacio para el tick */
+	
 }
 
 .dress-code-list.allowed li{
@@ -207,26 +213,68 @@ h5 {
 }
 
 
-.dress-code-list li img{
-  width: 82px;
+.dress-code-list.allowed li img{
+	    position: absolute;
+    width: 120px !important; /* Tamaño aumentado para el desborde */
+    left: -30px; /* Desborde por la izquierda */
+    top: -20px; /* Desborde por arriba */
+    transform: rotate(-10deg); /* Inclinación hacia la izquierda */
+    z-index: 2; /* Para que quede sobre el fondo del li */
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2)); /* Efecto de profundidad */
     height: auto;
     margin-right: 10px;
     border-radius: 5px;
 }
 
-.dress-code-list.allowed li::before{
-    content: "\f00c";
-    font-family: FontAwesome;
-    color: #76d7c4;
+.dress-code-list.not-allowed li img{
+	    position: absolute;
+    width: 120px !important; /* Tamaño aumentado para el desborde */
+    right: -30px; /* Desborde por la izquierda */
+    top: -20px; /* Desborde por arriba */
+    transform: rotate(10deg); /* Inclinación hacia la izquierda */
+    z-index: 2; /* Para que quede sobre el fondo del li */
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2)); /* Efecto de profundidad */
+    height: auto;
     margin-right: 10px;
-     font-size: 1.2em;
+    border-radius: 5px;
 }
+
+.dress-code-list li::after {
+    content: "";
+    position: absolute;
+    transform: translateY(-50%) rotate(-45deg);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff55' d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") 
+                center/contain no-repeat;
+    opacity: 0.4;
+    z-index: 1;
+	    right: 20px !important; /* Posición dentro del contenedor */
+    transform: translateY(-50%) rotate(-15deg) scale(2.5); /* Tamaño aumentado */
+    width: 42px;
+    height: 80px;
+    top: 49%; /* Centrado vertical ajustado */
+}
+
+/* Ajustar para lista permitida */
+.dress-code-list.allowed li::after {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%2376d7c455' d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") 
+                center/contain no-repeat;
+    right: 15px;
+    transform: translateY(-50%) rotate(2deg) scale(2);
+	
+}
+
+/* Ajustar para lista no permitida */
+.dress-code-list.not-allowed li::after {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f1948a55' d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E") 
+                center/contain no-repeat;
+    transform: translateY(-50%) rotate(-25deg) scale(2.8);
+    left: 32px;
+}
+
+
+.dress-code-list.allowed li::before,
 .dress-code-list.not-allowed li::before{
-    content: "\f05e";
-   font-family: FontAwesome;
-    color: #f1948a;
-    margin-right: 10px;
-    font-size: 1.2em;
+    content: none !important;
 
 }
 .color-palette-container{
@@ -265,6 +313,7 @@ h5 {
     border-radius: 50%;
     margin: 0 5px;
     border: 1px solid #00000038
+	
 }
 
 .color-palette.allowed-colors li{

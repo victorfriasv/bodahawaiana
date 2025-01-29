@@ -99,7 +99,7 @@ $(document).ready(function () {
                     "top": "11px",
                 });
                 $('header .navicon').css({
-                    "top": "34px",
+                    "top": "48px",
                 });
             } else {
                 $('section.navigation').removeClass('fixed');
@@ -111,7 +111,7 @@ $(document).ready(function () {
                     "top": "11px",
                 });
                 $('header .navicon').css({
-                    "top": "34px",
+                    "top": "48px",
                 });
             }
         });

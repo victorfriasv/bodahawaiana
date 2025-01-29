@@ -635,7 +635,7 @@ section .header {
 
 .nav-toggle {
   position: absolute;
-  top: -15px;
+  top: -31px;
   right: 15px;
   z-index: 999999;
   padding: 10px 15px 16px 0;
@@ -820,6 +820,8 @@ header ul.member-actions li {
 
 header ul.member-actions li a {
   color: #fff;
+      text-shadow: #000 1px 0 3px;
+	  box-shadow: #00000078 0px 0 2px;
 }
 
 header ul.member-actions li a:hover {

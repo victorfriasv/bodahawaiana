@@ -803,6 +803,7 @@ header ul.primary-nav li {
 header ul.primary-nav li a {
   color: #fff;
   padding-right: 25px;
+  text-shadow: #000 1px 0 3px;
 }
 
 header ul.primary-nav li a:hover {
@@ -1628,6 +1629,7 @@ textarea[name="message"]::placeholder {
     max-width: 150px;
     display: block;
     margin: 0 auto 20px;
+	margin-bottom:-35px;
 }
 
 .gifts-list {

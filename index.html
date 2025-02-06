@@ -342,6 +342,7 @@
     </div>
 </section>
 
+
 <section class="rsvp text-center" id="rsvp">
   <div id="rsvp-modal" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
@@ -423,17 +424,27 @@
           </div>
           <!-- Pregunta 2: Tipo de Comida (inicialmente oculta) -->
           <div class="row step" id="question2" style="display:none;">
+		  
+		  
               <div class="col-md-12">
                   <div class="form-input-group">
                       <i class="fa fa-cutlery"></i>
                       <select name="food_preference" id="food_preference">
-                          <option value="">¿Vas a querer comer carne tipo barbacoa?</option>
+                          <option value="">¿Vas a querer barbacoa?</option>
                           <option value="Carne">A tope con la carne</option>
                           <option value="Verdura">Yo iré full verduritas y piña</option>
 						  <option value="INTOLERANCIA">Tengo alguna intolerancia que debéis saber</option>
                        </select>
                   </div>
               </div>
+			  
+
+                 <div class="col-md-12">
+                    <div class="form-input-group">
+                         <i class="fa fa-exclamation-triangle"></i>
+                        <textarea name="intolerancia" class="" placeholder="¿Alguna intolerancia?"></textarea>
+                     </div>
+                 </div>
           </div>
 
           <!-- Pregunta 4: Bebidas (inicialmente oculta) -->
@@ -537,7 +548,7 @@
         document.getElementById('food_preference').removeAttribute('required');
          document.getElementById('transport').removeAttribute('required');
 
-        if (this.value === 'yes_full' || this.value === 'yes_ceremony_food' ) {
+        if (this.value === 'Si_full' || this.value === 'Si_comida' ) {
             // Si selecciona sí, muestra preguntas 2, 4 y 5
             question2.style.display = 'block';
              question4.style.display = 'block';
@@ -545,12 +556,12 @@
              document.getElementById('food_preference').setAttribute('required', true);
              document.getElementById('transport').setAttribute('required', true);
 
-        } else if(this.value === 'yes_coffee') {
+        } else if(this.value === 'Si_cafe') {
             // Si selecciona sí, muestra preguntas 4 y 5
            question4.style.display = 'block';
             question5.style.display = 'block';
             document.getElementById('transport').setAttribute('required', true);
-        } else if(this.value === 'no'){
+        } else if(this.value === 'No'){
           // Si selecciona no, muestra la pregunta 3
             question3.style.display = 'block';
         }
@@ -567,8 +578,16 @@
             }
 
       });
-</script>
+    document.getElementById('tieneIntolerancia').addEventListener('change', function() {
+         const question7 = document.getElementById('question7');
 
+        if(this.value === 'Si_intolerancia'){
+            question7.style.display = 'block';
+        } else {
+            question7.style.display = 'none';
+        }
+    });
+</script>
 
 
 

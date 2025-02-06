@@ -407,7 +407,7 @@
                         <option value="">¿Vas a asistir?</option>
                         <option value="Si_full">Sí, de principio a fin</option>
                         <option value="Si_comida">Sí, solo ceremonia y comida</option>
-                        <option value="Si_piscina">Sí, solo fiesta en la piscina</option>
+                        <option value="Si_cafe">Sí, solo fiesta en la piscina</option>
                         <option value="No">No, sorry :(</option>
                     </select>
                   </div>
@@ -555,7 +555,7 @@
              document.getElementById('food_preference').setAttribute('required', true);
              document.getElementById('transport').setAttribute('required', true);
 
-        } else if(this.value === 'Si_piscina') {
+        } else if(this.value === 'Si_cafe') {
             // Si selecciona sí, muestra preguntas 4 y 5
            question4.style.display = 'block';
             question5.style.display = 'block';

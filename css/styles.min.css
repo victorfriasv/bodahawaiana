@@ -249,7 +249,7 @@ h5 {
     transform: translateY(-50%) rotate(-45deg);
     background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffffff55' d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E") 
                 center/contain no-repeat;
-    opacity: 0.4;
+    opacity: 0.9;
     z-index: 1;
 	    right: 20px !important; /* Posición dentro del contenedor */
     transform: translateY(-50%) rotate(-15deg) scale(2.5); /* Tamaño aumentado */

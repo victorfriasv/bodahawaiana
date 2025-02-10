@@ -230,40 +230,38 @@ $('#rsvp-form').on('submit', function (e) {
                 $('#alert-wrapper').html(alert_markup('danger', '<strong>Ha ocurrido un error.</strong> Prueba en unos minutos o contacta con nosotros. '));
             });
 });
-    document.getElementById('attending').addEventListener('change', function() {
-        const question2 = document.getElementById('question2');
-        const question3 = document.getElementById('question3');
-        const question4 = document.getElementById('question4');
-        const question5 = document.getElementById('question5');
+document.getElementById('attending').addEventListener('change', function() {
+    const question2 = document.getElementById('question2');
+    const question3 = document.getElementById('question3');
+    const question4 = document.getElementById('question4');
+    //const question5 = document.getElementById('question5'); // Eliminamos la referencia a question5
 
-        // Oculta todas las preguntas opcionales
-        question2.style.display = 'none';
-        question3.style.display = 'none';
-        question4.style.display = 'none';
-        question5.style.display = 'none';
+    // Oculta todas las preguntas opcionales
+    question2.style.display = 'none';
+    question3.style.display = 'none';
+    question4.style.display = 'none';
+    //question5.style.display = 'none'; // Eliminamos la referencia a question5
 
-         //Quita el atributo required al ocultarse
-        document.getElementById('food_preference').removeAttribute('required');
-         document.getElementById('transport').removeAttribute('required');
+     //Quita el atributo required al ocultarse
+    document.getElementById('food_preference').removeAttribute('required');
 
-        if (this.value === 'Si_full' || this.value === 'Si_comida' ) {
-            // Si selecciona sí, muestra preguntas 2, 4 y 5
-            question2.style.display = 'block';
-             question4.style.display = 'block';
-            question5.style.display = 'block';
-             document.getElementById('food_preference').setAttribute('required', true);
-             document.getElementById('transport').setAttribute('required', true);
+    if (this.value === 'Si_full' || this.value === 'Si_comida' ) {
+        // Si selecciona sí, muestra preguntas 2, 4 y 5
+        question2.style.display = 'block';
+         question4.style.display = 'block';
+        //question5.style.display = 'block';  // Eliminamos la referencia a question5
+         document.getElementById('food_preference').setAttribute('required', true);
 
-        } else if(this.value === 'Si_cafe') {
-            // Si selecciona sí, muestra preguntas 4 y 5
-           question4.style.display = 'block';
-            question5.style.display = 'block';
-            document.getElementById('transport').setAttribute('required', true);
-        } else if(this.value === 'No'){
-          // Si selecciona no, muestra la pregunta 3
-            question3.style.display = 'block';
-        }
-    });
+    } else if(this.value === 'Si_cafe') {
+        // Si selecciona sí, muestra preguntas 4 y 5
+       question4.style.display = 'block';
+       // question5.style.display = 'block';  // Eliminamos la referencia a question5
+       
+    } else if(this.value === 'No'){
+      // Si selecciona no, muestra la pregunta 3
+        question3.style.display = 'block';
+    }
+});
 
     document.getElementById('invite_code').addEventListener('input', function(){
         const inviteCode = this.value;

@@ -87,7 +87,7 @@
             responseMessage.innerHTML = '<div class="alert alert-info">Enviando tu respuesta...</div>';
 
             // IMPORTANTE: Reemplaza con la URL de tu Web App de Google Apps Script
-            const scriptURL = 'URL_DE_TU_SCRIPT_DE_GOOGLE'; 
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxsYhJMtsq6F17W8BSRfVhtoR3Y8W0bSoUjmmpu36QO4cO5VobgpBUwJQHAel-nNwUe/exec'; 
 
             fetch(scriptURL, { method: 'POST', body: formData})
                 .then(response => response.json())

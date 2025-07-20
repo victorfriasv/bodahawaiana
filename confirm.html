@@ -3,65 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmación Final de Asistencia</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Confirmación Final de Asistencia - Boda Hawaiana</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* Puedes personalizar estos estilos para que coincidan con tu web principal */
-        body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f8f9fa;
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+        }
+        .background-container {
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723a9ce6ad_YOUR_CUSTOM_URL'); /* URL de imagen genérica */
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .background-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.7); /* Capa blanca semitransparente para legibilidad */
+            z-index: 1;
         }
         .container {
-            max-width: 500px;
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 550px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95); /* Fondo del formulario ligeramente más opaco */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
         h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #005f73; /* Un tono turquesa oscuro */
+            margin-bottom: 15px;
+        }
+        p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        .form-group {
+            text-align: left;
             margin-bottom: 20px;
-            color: #333;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 1rem;
         }
         .btn {
+            border: none;
+            padding: 15px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 50px; /* Botones redondeados */
+            cursor: pointer;
+            transition: all 0.3s ease;
             margin: 10px 5px;
-            padding: 10px 20px;
-            font-size: 16px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        #response-message {
+        .btn-success {
+            background-color: #2a9d8f; /* Verde azulado */
+        }
+        .btn-success:hover {
+            background-color: #268a7e;
+            transform: translateY(-2px);
+        }
+        .btn-danger {
+            background-color: #e76f51; /* Coral */
+        }
+        .btn-danger:hover {
+            background-color: #d86245;
+            transform: translateY(-2px);
+        }
+        #response-message .alert {
             margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1rem;
         }
+        .alert-success { background-color: #d1e7dd; border-color: #badbcc; color: #0f5132; }
+        .alert-danger { background-color: #f8d7da; border-color: #f5c2c7; color: #842029; }
+        .alert-info { background-color: #cff4fc; border-color: #b6effb; color: #055160; }
         .info-text {
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid #eeeeee;
-            font-size: 14px;
-            color: #666;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.9rem;
+            color: #777;
+        }
+        .info-text a {
+            color: #0077b6;
+            font-weight: 600;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h2>Confirmación Final</h2>
-        <p>Por favor, introduce tu código de invitado y dinos si finalmente te unes a la celebración.</p>
-        <form id="confirmation-form">
-            <div class="form-group text-left">
-                <label for="invite_code"><b>Código de Invitado:</b></label>
-                <input type="text" class="form-control" id="invite_code" name="invite_code" required>
+    <div class="background-container">
+        <div class="container">
+            <h2>Confirmación Final</h2>
+            <p>¡Aloha! Solo un último paso. <br>Por favor, confirma si te unes a nuestra celebración en el paraíso.</p>
+            <form id="confirmation-form">
+                <div class="form-group">
+                    <label for="invite_code" style="font-weight: 700; color: #333;">Mi Código de Invitado:</label>
+                    <input type="text" class="form-control" id="invite_code" name="invite_code" placeholder="Escribe tu código aquí..." required>
+                </div>
+                <div style="margin-top: 30px;">
+                    <button type="submit" name="attending_final" value="yes" class="btn btn-success">¡Sí, nos vemos en la fiesta!</button>
+                    <button type="submit" name="attending_final" value="no" class="btn btn-danger">Oh, no podré asistir</button>
+                </div>
+            </form>
+            <div id="response-message"></div>
+            <div class="info-text">
+                <p>Si necesitas cambiar algún detalle (bus, alergias, etc.), por favor, <a href="http://bodahawaiana.gay">visita de nuevo la web principal</a> y envía el formulario otra vez.</p>
             </div>
-            <div class="text-center">
-                <button type="submit" name="attending_final" value="yes" class="btn btn-success">¡Sí, allí estaré!</button>
-                <button type="submit" name="attending_final" value="no" class="btn btn-danger">No, no podré asistir</button>
-            </div>
-        </form>
-        <div id="response-message"></div>
-        <div class="info-text">
-            <p>Si necesitas modificar algún dato que nos diste (alergias, bus, etc.), por favor, entra en <a href="http://bodahawaiana.gay">bodahawaiana.gay</a> y rellena el formulario de nuevo con tu código.</p>
         </div>
     </div>
 
@@ -81,27 +158,30 @@
             e.preventDefault();
             const formData = new FormData();
             formData.append('invite_code', document.getElementById('invite_code').value);
+            // Capturamos el valor del botón que fue presionado para enviar el formulario
             formData.append('attending_final', e.submitter.value);
             
             const responseMessage = document.getElementById('response-message');
-            responseMessage.innerHTML = '<div class="alert alert-info">Enviando tu respuesta...</div>';
+            responseMessage.innerHTML = '<div class="alert alert-info">Un momento... estamos registrando tu respuesta.</div>';
 
-            // IMPORTANTE: Reemplaza con la URL de tu Web App de Google Apps Script
+            // URL del script de Google ya actualizada.
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxsYhJMtsq6F17W8BSRfVhtoR3Y8W0bSoUjmmpu36QO4cO5VobgpBUwJQHAel-nNwUe/exec'; 
 
             fetch(scriptURL, { method: 'POST', body: formData})
                 .then(response => response.json())
                 .then(data => {
                     if (data.result === 'success') {
-                        responseMessage.innerHTML = '<div class="alert alert-success">¡Genial! Hemos guardado tu respuesta. ¡Gracias!</div>';
-                        form.reset();
+                        responseMessage.innerHTML = '<div class="alert alert-success"><strong>¡Mahalo!</strong> Tu respuesta ha sido guardada. ¡Qué ganas de verte!</div>';
+                        form.reset(); // Limpia el formulario
+                         // Opcional: Ocultar el formulario después de una respuesta exitosa
+                        form.style.display = 'none';
                     } else {
-                        responseMessage.innerHTML = `<div class="alert alert-danger"><b>Error:</b> ${data.message}</div>`;
+                        responseMessage.innerHTML = `<div class="alert alert-danger"><strong>Error:</strong> ${data.message}</div>`;
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    responseMessage.innerHTML = '<div class="alert alert-danger">Ups, algo ha fallado. Por favor, inténtalo de nuevo.</div>';
+                    responseMessage.innerHTML = '<div class="alert alert-danger">Vaya, algo falló. Por favor, inténtalo de nuevo en un momento.</div>';
                 });
         });
     </script>

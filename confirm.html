@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación Final de Asistencia</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Puedes personalizar estos estilos para que coincidan con tu web principal */
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .btn {
+            margin: 10px 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #response-message {
+            margin-top: 20px;
+        }
+        .info-text {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eeeeee;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Confirmación Final</h2>
+        <p>Por favor, introduce tu código de invitado y dinos si finalmente te unes a la celebración.</p>
+        <form id="confirmation-form">
+            <div class="form-group text-left">
+                <label for="invite_code"><b>Código de Invitado:</b></label>
+                <input type="text" class="form-control" id="invite_code" name="invite_code" required>
+            </div>
+            <div class="text-center">
+                <button type="submit" name="attending_final" value="yes" class="btn btn-success">¡Sí, allí estaré!</button>
+                <button type="submit" name="attending_final" value="no" class="btn btn-danger">No, no podré asistir</button>
+            </div>
+        </form>
+        <div id="response-message"></div>
+        <div class="info-text">
+            <p>Si necesitas modificar algún dato que nos diste (alergias, bus, etc.), por favor, entra en <a href="http://bodahawaiana.gay">bodahawaiana.gay</a> y rellena el formulario de nuevo con tu código.</p>
+        </div>
+    </div>
+
+    <script>
+        // Rellena el código de invitado desde la URL
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const inviteCode = urlParams.get('code');
+            if (inviteCode) {
+                document.getElementById('invite_code').value = inviteCode;
+            }
+        });
+
+        // Envía el formulario al script de Google
+        const form = document.getElementById('confirmation-form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData();
+            formData.append('invite_code', document.getElementById('invite_code').value);
+            formData.append('attending_final', e.submitter.value);
+            
+            const responseMessage = document.getElementById('response-message');
+            responseMessage.innerHTML = '<div class="alert alert-info">Enviando tu respuesta...</div>';
+
+            // IMPORTANTE: Reemplaza con la URL de tu Web App de Google Apps Script
+            const scriptURL = 'URL_DE_TU_SCRIPT_DE_GOOGLE'; 
+
+            fetch(scriptURL, { method: 'POST', body: formData})
+                .then(response => response.json())
+                .then(data => {
+                    if (data.result === 'success') {
+                        responseMessage.innerHTML = '<div class="alert alert-success">¡Genial! Hemos guardado tu respuesta. ¡Gracias!</div>';
+                        form.reset();
+                    } else {
+                        responseMessage.innerHTML = `<div class="alert alert-danger"><b>Error:</b> ${data.message}</div>`;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    responseMessage.innerHTML = '<div class="alert alert-danger">Ups, algo ha fallado. Por favor, inténtalo de nuevo.</div>';
+                });
+        });
+    </script>
+</body>
+</html>

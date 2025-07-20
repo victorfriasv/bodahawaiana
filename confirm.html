@@ -6,60 +6,26 @@
     <title>Confirmación Final de Asistencia - Boda Hawaiana</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        body, html {
-            margin: 0; padding: 0; width: 100%; height: 100%;
-            font-family: 'Montserrat', sans-serif; color: #333;
-        }
-        .background-container {
-            background-image: url('img/hero-min.jpg');
-            background-size: cover; background-position: center;
-            width: 100%; height: 100%; display: flex;
-            justify-content: center; align-items: center;
-            padding: 20px; box-sizing: border-box; position: relative;
-        }
-        .background-container::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255, 255, 255, 0.7); z-index: 1;
-        }
-        .container {
-            max-width: 550px; width: 100%; background: rgba(255, 255, 255, 0.95);
-            padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            text-align: center; position: relative; z-index: 2;
-        }
-        h2 {
-            font-family: 'Playfair Display', serif; font-size: 2.5rem;
-            color: #005f73; margin-bottom: 15px;
-        }
+        /* (Los estilos CSS no han cambiado) */
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Montserrat', sans-serif; color: #333; }
+        .background-container { background-image: url('img/hero-min.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; position: relative; }
+        .background-container::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.7); z-index: 1; }
+        .container { max-width: 550px; width: 100%; background: rgba(255, 255, 255, 0.95); padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); text-align: center; position: relative; z-index: 2; }
+        h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #005f73; margin-bottom: 15px; }
         p { margin-bottom: 25px; font-size: 1.1rem; color: #555; }
-        #name-welcome-message {
-            background-color: #e2f3f5; color: #005f73; padding: 10px 15px;
-            border-radius: 8px; margin-bottom: 20px; font-size: 0.95rem;
-            border: 1px solid #a6d8e0;
-        }
+        #name-welcome-message { background-color: #e2f3f5; color: #005f73; padding: 10px 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.95rem; border: 1px solid #a6d8e0; }
         .form-group { text-align: left; margin-bottom: 20px; }
-        .form-control {
-            width: 100%; padding: 12px; border: 1px solid #ccc;
-            border-radius: 8px; box-sizing: border-box; font-size: 1rem;
-        }
-        .btn {
-            border: none; padding: 15px 30px; font-size: 1rem; font-weight: 700;
-            border-radius: 50px; cursor: pointer; transition: all 0.3s ease;
-            margin: 10px 5px; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 1rem; }
+        .btn { border: none; padding: 15px 30px; font-size: 1rem; font-weight: 700; border-radius: 50px; cursor: pointer; transition: all 0.3s ease; margin: 10px 5px; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .btn-success { background-color: #2a9d8f; }
         .btn-success:hover { background-color: #268a7e; transform: translateY(-2px); }
         .btn-danger { background-color: #e76f51; }
         .btn-danger:hover { background-color: #d86245; transform: translateY(-2px); }
-        #response-message .alert {
-            margin-top: 20px; padding: 15px; border-radius: 8px; font-size: 1rem;
-        }
+        #response-message .alert { margin-top: 20px; padding: 15px; border-radius: 8px; font-size: 1rem; }
         .alert-success { background-color: #d1e7dd; border-color: #badbcc; color: #0f5132; }
         .alert-danger { background-color: #f8d7da; border-color: #f5c2c7; color: #842029; }
         .alert-info { background-color: #cff4fc; border-color: #b6effb; color: #055160; }
-        .info-text {
-            margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;
-            font-size: 0.9rem; color: #777;
-        }
+        .info-text { margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 0.9rem; color: #777; }
         .info-text a { color: #0077b6; font-weight: 600; text-decoration: none; }
     </style>
 </head>
@@ -72,7 +38,7 @@
             <form id="confirmation-form">
                 <div class="form-group">
                     <label for="invite_code" style="font-weight: 700; color: #333;">Mi Código de Invitado:</label>
-                    <input type="text" class="form-control" id="invite_code" name="invite_code" placeholder="Escribe tu código aquí..." required>
+                    <input type="text" class="form-control" id="invite_code" name="invite_code" placeholder="Escribe tu código aquí..." required maxlength="5">
                 </div>
                 <div style="margin-top: 30px;">
                     <button type="submit" name="attending_final" value="yes" class="btn btn-success">¡Sí, nos vemos en la fiesta!</button>
@@ -87,41 +53,64 @@
     </div>
 
     <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwU4tqeUv4UOrg9ndzR1pGjsIL61SbcHXtoGSEP3yEkDtxPOdnS0oviwMU2j2Bz7H6yKg/exec';
+        const urlParams = new URLSearchParams(window.location.search);
+        const codeFromUrl = urlParams.get('code');
+        const nameFromUrl = urlParams.get('name');
+        
+        const welcomeMessage = document.getElementById('name-welcome-message');
+        const codeInput = document.getElementById('invite_code');
+        const form = document.getElementById('confirmation-form');
+
         document.addEventListener('DOMContentLoaded', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const inviteCode = urlParams.get('code');
-            const name = urlParams.get('name');
-            const welcomeMessage = document.getElementById('name-welcome-message');
-            const codeInput = document.getElementById('invite_code');
-
-            if (inviteCode) {
-                codeInput.value = inviteCode;
+            if (codeFromUrl) {
+                codeInput.value = codeFromUrl;
             }
-
-            if (name) {
-                welcomeMessage.innerHTML = `Estás reconfirmando para <strong>${name}</strong>. Si no eres tú, por favor, introduce tu código original.`;
+            if (nameFromUrl) {
+                welcomeMessage.innerHTML = `Estás reconfirmando para <strong>${nameFromUrl}</strong>. Si no eres tú, por favor, introduce tu código original.`;
                 welcomeMessage.style.display = 'block';
             }
-
-            codeInput.addEventListener('input', function() {
-                welcomeMessage.style.display = 'none';
-            });
         });
 
-        const form = document.getElementById('confirmation-form');
+        codeInput.addEventListener('input', function() {
+            const currentCode = this.value;
+            // Si el código introducido es diferente al de la URL, oculta el mensaje inicial.
+            if (currentCode !== codeFromUrl) {
+                 welcomeMessage.style.display = 'none';
+            }
+            // Cuando se introducen 5 dígitos, busca el nombre.
+            if (currentCode.length === 5) {
+                welcomeMessage.style.display = 'block';
+                welcomeMessage.innerHTML = 'Buscando invitado...';
+                fetch(`${scriptURL}?code=${currentCode}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.result === 'success') {
+                            welcomeMessage.innerHTML = `Estás reconfirmando para <strong>${data.name}</strong>. Si no eres tú, comprueba el código.`;
+                        } else {
+                            welcomeMessage.innerHTML = 'No se encontró ningún invitado con ese código.';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Lookup Error:', error);
+                        welcomeMessage.innerHTML = 'Error al verificar el código.';
+                    });
+            }
+        });
+
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             const formData = new FormData(form);
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.has('name')) {
-                formData.append('name', urlParams.get('name'));
+            const currentCode = codeInput.value;
+
+            // Solo envía el nombre si el código no ha cambiado y el nombre venía en la URL.
+            if (currentCode === codeFromUrl && nameFromUrl) {
+                formData.append('name', nameFromUrl);
             }
             formData.append('attending_final', e.submitter.value);
             
             const responseMessage = document.getElementById('response-message');
             responseMessage.innerHTML = '<div class="alert alert-info">Un momento... estamos registrando tu respuesta.</div>';
-
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzvskN6CfzW-zAWloiSeCxOwKmRkV_WEFNc69r4OXgOJRXbiBG5uRYpXSoKJnSFCwFHcA/exec'; 
 
             fetch(scriptURL, { method: 'POST', body: formData})
                 .then(response => response.json())
@@ -130,12 +119,13 @@
                         responseMessage.innerHTML = `<div class="alert alert-success"><strong>¡Mahalo ${data.name ? data.name : ''}!</strong> Tu respuesta ha sido guardada. ¡Qué ganas de verte!</div>`;
                         form.reset();
                         form.style.display = 'none';
+                        welcomeMessage.style.display = 'none';
                     } else {
                         responseMessage.innerHTML = `<div class="alert alert-danger"><strong>Error:</strong> ${data.message}</div>`;
                     }
                 })
                 .catch(error => {
-                    console.error('Error:', error);
+                    console.error('Submit Error:', error);
                     responseMessage.innerHTML = '<div class="alert alert-danger">Vaya, algo falló. Por favor, inténtalo de nuevo en un momento.</div>';
                 });
         });

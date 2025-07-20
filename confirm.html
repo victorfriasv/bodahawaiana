@@ -7,125 +7,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            font-family: 'Montserrat', sans-serif;
-            color: #333;
+            margin: 0; padding: 0; width: 100%; height: 100%;
+            font-family: 'Montserrat', sans-serif; color: #333;
         }
         .background-container {
-            /* === IMAGEN DE FONDO ACTUALIZADA === */
-            background-image: url('img/hero-min.jpg'); 
-            background-size: cover;
-            background-position: center;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: border-box;
-            position: relative;
+            background-image: url('img/hero-min.jpg');
+            background-size: cover; background-position: center;
+            width: 100%; height: 100%; display: flex;
+            justify-content: center; align-items: center;
+            padding: 20px; box-sizing: border-box; position: relative;
         }
         .background-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(255, 255, 255, 0.7); /* Capa blanca semitransparente para legibilidad */
-            z-index: 1;
+            content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(255, 255, 255, 0.7); z-index: 1;
         }
         .container {
-            max-width: 550px;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95); /* Fondo del formulario ligeramente más opaco */
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            text-align: center;
-            position: relative;
-            z-index: 2;
+            max-width: 550px; width: 100%; background: rgba(255, 255, 255, 0.95);
+            padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            text-align: center; position: relative; z-index: 2;
         }
         h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: #005f73; /* Un tono turquesa oscuro */
-            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif; font-size: 2.5rem;
+            color: #005f73; margin-bottom: 15px;
         }
-        p {
-            margin-bottom: 25px;
-            font-size: 1.1rem;
-            color: #555;
+        p { margin-bottom: 25px; font-size: 1.1rem; color: #555; }
+        #name-welcome-message {
+            background-color: #e2f3f5; color: #005f73; padding: 10px 15px;
+            border-radius: 8px; margin-bottom: 20px; font-size: 0.95rem;
+            border: 1px solid #a6d8e0;
         }
-        .form-group {
-            text-align: left;
-            margin-bottom: 20px;
-        }
+        .form-group { text-align: left; margin-bottom: 20px; }
         .form-control {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            box-sizing: border-box;
-            font-size: 1rem;
+            width: 100%; padding: 12px; border: 1px solid #ccc;
+            border-radius: 8px; box-sizing: border-box; font-size: 1rem;
         }
         .btn {
-            border: none;
-            padding: 15px 30px;
-            font-size: 1rem;
-            font-weight: 700;
-            border-radius: 50px; /* Botones redondeados */
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 10px 5px;
-            color: white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: none; padding: 15px 30px; font-size: 1rem; font-weight: 700;
+            border-radius: 50px; cursor: pointer; transition: all 0.3s ease;
+            margin: 10px 5px; color: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-        .btn-success {
-            background-color: #2a9d8f; /* Verde azulado */
-        }
-        .btn-success:hover {
-            background-color: #268a7e;
-            transform: translateY(-2px);
-        }
-        .btn-danger {
-            background-color: #e76f51; /* Coral */
-        }
-        .btn-danger:hover {
-            background-color: #d86245;
-            transform: translateY(-2px);
-        }
+        .btn-success { background-color: #2a9d8f; }
+        .btn-success:hover { background-color: #268a7e; transform: translateY(-2px); }
+        .btn-danger { background-color: #e76f51; }
+        .btn-danger:hover { background-color: #d86245; transform: translateY(-2px); }
         #response-message .alert {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 8px;
-            font-size: 1rem;
+            margin-top: 20px; padding: 15px; border-radius: 8px; font-size: 1rem;
         }
         .alert-success { background-color: #d1e7dd; border-color: #badbcc; color: #0f5132; }
         .alert-danger { background-color: #f8d7da; border-color: #f5c2c7; color: #842029; }
         .alert-info { background-color: #cff4fc; border-color: #b6effb; color: #055160; }
         .info-text {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #e0e0e0;
-            font-size: 0.9rem;
-            color: #777;
+            margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0;
+            font-size: 0.9rem; color: #777;
         }
-        .info-text a {
-            color: #0077b6;
-            font-weight: 600;
-            text-decoration: none;
-        }
+        .info-text a { color: #0077b6; font-weight: 600; text-decoration: none; }
     </style>
 </head>
 <body>
     <div class="background-container">
         <div class="container">
             <h2>Confirmación Final</h2>
-            <p>¡Aloha! Solo un último paso. <br>Por favor, confirma si te unes a nuestra celebración en el paraíso.</p>
+            <div id="name-welcome-message" style="display: none;"></div>
+            <p>¡Aloha! Solo un último paso. <br>Por favor, confirma si te unes a nuestra celebración.</p>
             <form id="confirmation-form">
                 <div class="form-group">
                     <label for="invite_code" style="font-weight: 700; color: #333;">Mi Código de Invitado:</label>
@@ -144,21 +87,35 @@
     </div>
 
     <script>
-        // Rellena el código de invitado desde la URL
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);
             const inviteCode = urlParams.get('code');
+            const name = urlParams.get('name');
+            const welcomeMessage = document.getElementById('name-welcome-message');
+            const codeInput = document.getElementById('invite_code');
+
             if (inviteCode) {
-                document.getElementById('invite_code').value = inviteCode;
+                codeInput.value = inviteCode;
             }
+
+            if (name) {
+                welcomeMessage.innerHTML = `Estás reconfirmando para <strong>${name}</strong>. Si no eres tú, por favor, introduce tu código original.`;
+                welcomeMessage.style.display = 'block';
+            }
+
+            codeInput.addEventListener('input', function() {
+                welcomeMessage.style.display = 'none';
+            });
         });
 
-        // Envía el formulario al script de Google
         const form = document.getElementById('confirmation-form');
         form.addEventListener('submit', function(e) {
             e.preventDefault();
-            const formData = new FormData();
-            formData.append('invite_code', document.getElementById('invite_code').value);
+            const formData = new FormData(form);
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('name')) {
+                formData.append('name', urlParams.get('name'));
+            }
             formData.append('attending_final', e.submitter.value);
             
             const responseMessage = document.getElementById('response-message');
@@ -170,7 +127,7 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.result === 'success') {
-                        responseMessage.innerHTML = '<div class="alert alert-success"><strong>¡Mahalo!</strong> Tu respuesta ha sido guardada. ¡Qué ganas de verte!</div>';
+                        responseMessage.innerHTML = `<div class="alert alert-success"><strong>¡Mahalo ${data.name ? data.name : ''}!</strong> Tu respuesta ha sido guardada. ¡Qué ganas de verte!</div>`;
                         form.reset();
                         form.style.display = 'none';
                     } else {

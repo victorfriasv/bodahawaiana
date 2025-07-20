@@ -15,7 +15,8 @@
             color: #333;
         }
         .background-container {
-            background-image: url('https://images.unsplash.com/photo-1507525428034-b723a9ce6ad_YOUR_CUSTOM_URL'); /* URL de imagen genérica */
+            /* === IMAGEN DE FONDO ACTUALIZADA === */
+            background-image: url('img/hero-min.jpg'); 
             background-size: cover;
             background-position: center;
             width: 100%;
@@ -158,13 +159,11 @@
             e.preventDefault();
             const formData = new FormData();
             formData.append('invite_code', document.getElementById('invite_code').value);
-            // Capturamos el valor del botón que fue presionado para enviar el formulario
             formData.append('attending_final', e.submitter.value);
             
             const responseMessage = document.getElementById('response-message');
             responseMessage.innerHTML = '<div class="alert alert-info">Un momento... estamos registrando tu respuesta.</div>';
 
-            // URL del script de Google ya actualizada.
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxsYhJMtsq6F17W8BSRfVhtoR3Y8W0bSoUjmmpu36QO4cO5VobgpBUwJQHAel-nNwUe/exec'; 
 
             fetch(scriptURL, { method: 'POST', body: formData})
@@ -172,8 +171,7 @@
                 .then(data => {
                     if (data.result === 'success') {
                         responseMessage.innerHTML = '<div class="alert alert-success"><strong>¡Mahalo!</strong> Tu respuesta ha sido guardada. ¡Qué ganas de verte!</div>';
-                        form.reset(); // Limpia el formulario
-                         // Opcional: Ocultar el formulario después de una respuesta exitosa
+                        form.reset();
                         form.style.display = 'none';
                     } else {
                         responseMessage.innerHTML = `<div class="alert alert-danger"><strong>Error:</strong> ${data.message}</div>`;

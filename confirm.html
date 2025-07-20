@@ -121,7 +121,7 @@
             const responseMessage = document.getElementById('response-message');
             responseMessage.innerHTML = '<div class="alert alert-info">Un momento... estamos registrando tu respuesta.</div>';
 
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxsYhJMtsq6F17W8BSRfVhtoR3Y8W0bSoUjmmpu36QO4cO5VobgpBUwJQHAel-nNwUe/exec'; 
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzvskN6CfzW-zAWloiSeCxOwKmRkV_WEFNc69r4OXgOJRXbiBG5uRYpXSoKJnSFCwFHcA/exec'; 
 
             fetch(scriptURL, { method: 'POST', body: formData})
                 .then(response => response.json())

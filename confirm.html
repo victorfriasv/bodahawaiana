@@ -6,11 +6,52 @@
     <title>Confirmación Final de Asistencia - Boda Hawaiana</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* (Estilos existentes) */
-        body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Montserrat', sans-serif; color: #333; }
-        .background-container { background-image: url('img/hero-min.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; position: relative; }
-        .background-container::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.7); z-index: 1; }
-        .container { max-width: 550px; width: 100%; background: rgba(255, 255, 255, 0.95); padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); text-align: center; position: relative; z-index: 2; }
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+        }
+        /* --- ESTILOS MODIFICADOS PARA MEJORAR SCROLL Y VISTA MÓVIL --- */
+        .background-container {
+            background-image: url('img/hero-min.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Mantiene el fondo fijo */
+            width: 100%;
+            min-height: 100vh; /* Usa el alto de la pantalla como mínimo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px; /* Añade padding vertical para asegurar espacio */
+            box-sizing: border-box;
+            position: relative;
+            overflow-y: auto; /* Permite scroll si el contenido es muy largo */
+        }
+        .background-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: 1;
+        }
+        /* --- FIN DE ESTILOS MODIFICADOS --- */
+        .container {
+            max-width: 550px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
         h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #005f73; margin-bottom: 15px; }
         p { margin-bottom: 25px; font-size: 1.1rem; color: #555; }
         #name-welcome-message { background-color: #e2f3f5; color: #005f73; padding: 10px 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.95rem; border: 1px solid #a6d8e0; }
@@ -27,52 +68,16 @@
         .alert-info { background-color: #cff4fc; border-color: #b6effb; color: #055160; }
         .info-text { margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 0.9rem; color: #777; }
         .info-text a { color: #0077b6; font-weight: 600; text-decoration: none; }
-
-        /* --- Estilos del desplegable --- */
-        .details-section {
-            margin: 25px 0;
-            text-align: left;
-        }
-        details {
-            background-color: #f9f9f9;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            padding: 10px 15px;
-        }
-        summary {
-            font-weight: 700;
-            color: #005f73;
-            cursor: pointer;
-            font-size: 1.1rem;
-        }
-        .details-content {
-            padding-top: 15px;
-        }
-        .details-content p {
-            font-size: 1rem;
-            margin-bottom: 10px;
-        }
-        .details-content ul {
-            list-style: none;
-            padding: 0;
-        }
-        .details-content li {
-            margin-bottom: 8px;
-        }
-        .details-content a {
-            color: #2a9d8f;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .details-content a:hover {
-            text-decoration: underline;
-        }
-        .details-content iframe {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-top: 10px;
-        }
+        .details-section { margin: 25px 0; text-align: left; }
+        details { background-color: #f9f9f9; border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 10px; padding: 10px 15px; }
+        summary { font-weight: 700; color: #005f73; cursor: pointer; font-size: 1.1rem; }
+        .details-content { padding-top: 15px; }
+        .details-content p { font-size: 1rem; margin-bottom: 10px; }
+        .details-content ul { list-style: none; padding: 0; }
+        .details-content li { margin-bottom: 8px; }
+        .details-content a { color: #2a9d8f; text-decoration: none; font-weight: 600; }
+        .details-content a:hover { text-decoration: underline; }
+        .details-content iframe { max-width: 100%; border-radius: 8px; margin-top: 10px; }
     </style>
 </head>
 <body>

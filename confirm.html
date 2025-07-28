@@ -14,21 +14,20 @@
             font-family: 'Montserrat', sans-serif;
             color: #333;
         }
-        /* --- ESTILOS MODIFICADOS PARA MEJORAR SCROLL Y VISTA MÓVIL --- */
         .background-container {
             background-image: url('img/hero-min.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Mantiene el fondo fijo */
+            background-attachment: fixed;
             width: 100%;
-            min-height: 100vh; /* Usa el alto de la pantalla como mínimo */
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 20px; /* Añade padding vertical para asegurar espacio */
+            padding: 40px 20px;
             box-sizing: border-box;
             position: relative;
-            overflow-y: auto; /* Permite scroll si el contenido es muy largo */
+            overflow-y: auto;
         }
         .background-container::before {
             content: '';
@@ -40,7 +39,6 @@
             background: rgba(255, 255, 255, 0.7);
             z-index: 1;
         }
-        /* --- FIN DE ESTILOS MODIFICADOS --- */
         .container {
             max-width: 550px;
             width: 100%;
@@ -93,6 +91,8 @@
                     <input type="text" class="form-control" id="invite_code" name="invite_code" placeholder="Escribe tu código aquí..." required maxlength="5">
                 </div>
                 
+                <div id="response-message"></div>
+                
                 <div style="margin-top: 20px;">
                     <button type="submit" name="attending_final" value="yes" class="btn btn-success">¡Sí, nos vemos en la fiesta!</button>
                     <button type="submit" name="attending_final" value="no" class="btn btn-danger">Oh, finalmente no podré asistir</button>
@@ -125,7 +125,8 @@
                 </div>
             </form>
             
-            <div id="response-message"></div>
+            <div id="form-replacement-message" style="display: none;"></div>
+
             <div class="info-text">
                 <p>Para ver <strong>todos los detalles</strong> de la boda (vestimenta, horarios, etc.) o si necesitas <strong>cambiar tu asistencia, bebidas...</strong>, por favor, <a href="http://bodahawaiana.gay" target="_blank">visita la web principal</a>.</p>
             </div>
@@ -133,7 +134,6 @@
     </div>
 
     <script>
-        // (El JavaScript original no ha sido modificado)
         const scriptURL = 'https://script.google.com/macros/s/AKfycby18h3rWNDC3prE6dtuR5_ALdmLJ-xRScYKMIpr318x1Ff9kbzJx4oE_xu-d4C3bGibQw/exec';
         const urlParams = new URLSearchParams(window.location.search);
         const codeFromUrl = urlParams.get('code');
@@ -142,6 +142,8 @@
         const welcomeMessage = document.getElementById('name-welcome-message');
         const codeInput = document.getElementById('invite_code');
         const form = document.getElementById('confirmation-form');
+        const responseMessage = document.getElementById('response-message');
+        const formReplacementMessage = document.getElementById('form-replacement-message');
 
         document.addEventListener('DOMContentLoaded', function() {
             if (codeFromUrl) {
@@ -187,17 +189,18 @@
             }
             formData.append('attending_final', e.submitter.value);
             
-            const responseMessage = document.getElementById('response-message');
             responseMessage.innerHTML = '<div class="alert alert-info">Un momento... estamos registrando tu respuesta.</div>';
 
             fetch(scriptURL, { method: 'POST', body: formData})
                 .then(response => response.json())
                 .then(data => {
                     if (data.result === 'success') {
-                        responseMessage.innerHTML = `<div class="alert alert-success"><strong>¡Mahalo ${data.name ? data.name : ''}!</strong> Tu respuesta ha sido guardada. ¡Qué ganas de verte!</div>`;
-                        form.reset();
-                        form.style.display = 'none';
-                        welcomeMessage.style.display = 'none';
+                        // Mueve el mensaje de éxito al div que reemplazará el formulario
+                        const finalMessage = `<div class="alert alert-success"><strong>¡Mahalo ${data.name ? data.name : ''}!</strong> Tu respuesta ha sido guardada. ¡Qué ganas de verte!</div>`;
+                        form.style.display = 'none'; // Oculta el formulario
+                        formReplacementMessage.innerHTML = finalMessage;
+                        formReplacementMessage.style.display = 'block';
+                        
                     } else {
                         responseMessage.innerHTML = `<div class="alert alert-danger"><strong>Error:</strong> ${data.message}</div>`;
                     }

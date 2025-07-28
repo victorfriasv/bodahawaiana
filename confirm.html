@@ -42,12 +42,12 @@
                 </div>
                 <div style="margin-top: 30px;">
                     <button type="submit" name="attending_final" value="yes" class="btn btn-success">¡Sí, nos vemos en la fiesta!</button>
-                    <button type="submit" name="attending_final" value="no" class="btn btn-danger">Oh, no podré asistir</button>
+                    <button type="submit" name="attending_final" value="no" class="btn btn-danger">Oh, finalmente no podré asistir</button>
                 </div>
             </form>
             <div id="response-message"></div>
             <div class="info-text">
-                <p>Si necesitas cambiar algún detalle (bus, alergias, etc.), por favor, <a href="http://bodahawaiana.gay">visita de nuevo la web principal</a> y envía el formulario otra vez.</p>
+                <p>Si necesitas cambiar algún detalle (cuándo asistes, comida, bebida, etc.), por favor, <a href="http://bodahawaiana.gay">visita de nuevo la web principal</a> y envía el formulario otra vez con tus cambios hechos. ¡Esta es tu última oportunidad!</p>
             </div>
         </div>
     </div>
@@ -67,7 +67,7 @@
                 codeInput.value = codeFromUrl;
             }
             if (nameFromUrl) {
-                welcomeMessage.innerHTML = `Estás reconfirmando para <strong>${nameFromUrl}</strong>. Si no eres tú, por favor, introduce tu código original.`;
+                welcomeMessage.innerHTML = `Estás reconfirmando para <strong>${nameFromUrl}</strong>. Si no eres tú, por favor, introduce tu código de invitado original.`;
                 welcomeMessage.style.display = 'block';
             }
         });
@@ -86,7 +86,7 @@
                     .then(response => response.json())
                     .then(data => {
                         if (data.result === 'success') {
-                            welcomeMessage.innerHTML = `Estás reconfirmando para <strong>${data.name}</strong>. Si no eres tú, comprueba el código.`;
+                            welcomeMessage.innerHTML = `Estás reconfirmando para <strong>${data.name}</strong>. Si no eres tú, vuelve a introducir tu código de invitado original.`;
                         } else {
                             welcomeMessage.innerHTML = 'No se encontró ningún invitado con ese código.';
                         }

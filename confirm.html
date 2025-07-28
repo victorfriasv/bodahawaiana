@@ -6,7 +6,7 @@
     <title>Confirmación Final de Asistencia - Boda Hawaiana</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* (Los estilos CSS no han cambiado) */
+        /* (Estilos existentes) */
         body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Montserrat', sans-serif; color: #333; }
         .background-container { background-image: url('img/hero-min.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; position: relative; }
         .background-container::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255, 255, 255, 0.7); z-index: 1; }
@@ -27,6 +27,53 @@
         .alert-info { background-color: #cff4fc; border-color: #b6effb; color: #055160; }
         .info-text { margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 0.9rem; color: #777; }
         .info-text a { color: #0077b6; font-weight: 600; text-decoration: none; }
+
+        /* --- NUEVOS ESTILOS PARA DESPLEGABLES --- */
+        .details-section {
+            margin: 25px 0;
+            text-align: left;
+        }
+        details {
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 10px 15px;
+        }
+        summary {
+            font-weight: 700;
+            color: #005f73;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+        .details-content {
+            padding-top: 15px;
+        }
+        .details-content p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        .details-content ul {
+            list-style: none;
+            padding: 0;
+        }
+        .details-content li {
+            margin-bottom: 8px;
+        }
+        .details-content a {
+            color: #2a9d8f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .details-content a:hover {
+            text-decoration: underline;
+        }
+        .details-content iframe {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        /* --- FIN DE NUEVOS ESTILOS --- */
     </style>
 </head>
 <body>
@@ -35,6 +82,37 @@
             <h2>Confirmación Final</h2>
             <div id="name-welcome-message" style="display: none;"></div>
             <p>¡Aloha! Solo un último paso. <br>Por favor, confirma si te unes a nuestra celebración.</p>
+
+            <div class="details-section">
+                <details>
+                    <summary>🗓️ ¿Cuándo es la fiesta?</summary>
+                    <div class="details-content">
+                        <p><strong>Fecha:</strong> 13 de septiembre de 2025</p>
+                        <p><strong>Hora:</strong> A partir de las 13:00h</p>
+                        <ul>
+                            <li><a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Boda%20Hawaiana%20de%20Antonio%20y%20V%C3%ADctor&dates=20250913T130000/20250914T000000&details=%C2%A1Nos%20vemos%20en%20la%20fiesta%20m%C3%A1s%20tropical!&location=La%20casita%20de%20Pinto,%20Madrid" target="_blank">Añadir a Google Calendar</a></li>
+                            <li><a href="https://outlook.live.com/owa/?path=/calendar/action/compose&subject=Boda%20Hawaiana%20de%20Antonio%20y%20V%C3%ADctor&body=%C2%A1Nos%20vemos%20en%20la%20fiesta%20m%C3%A1s%20tropical!&startdt=2025-09-13T13:00:00&enddt=2025-09-14T00:00:00&location=La%20casita%20de%20Pinto,%20Madrid" target="_blank">Añadir a Outlook</a></li>
+                            <li><a href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Boda Hawaiana de Antonio y Víctor%0ADTSTART:20250913T130000%0ADTEND:20250914T000000%0ALOCATION:La casita de Pinto, Madrid%0ADESCRIPTION:¡Nos vemos en la fiesta más tropical!%0AEND:VEVENT%0AEND:VCALENDAR" download="Boda-Hawaiana.ics">Descargar para iCal (Apple)</a></li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>📍 ¿Dónde está el sarao?</summary>
+                    <div class="details-content">
+                        <p><strong>Lugar:</strong> La casita de Pinto, Madrid.</p>
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163903.0476306081!2d-3.722867758622369!3d40.241490522102914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd421f006aec1e79%3A0xfa9ea4acc44120a7!2sLa%20Casita%20de%20Pinto%20%7C%20local%20para%20fiestas!5e0!3m2!1ses!2ses!4v1738131472548!5m2!1ses!2ses"
+                            width="100%" 
+                            height="300" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </details>
+            </div>
             <form id="confirmation-form">
                 <div class="form-group">
                     <label for="invite_code" style="font-weight: 700; color: #333;">Mi Código de Invitado:</label>
@@ -53,6 +131,7 @@
     </div>
 
     <script>
+        // (El JavaScript original no ha sido modificado)
         const scriptURL = 'https://script.google.com/macros/s/AKfycby18h3rWNDC3prE6dtuR5_ALdmLJ-xRScYKMIpr318x1Ff9kbzJx4oE_xu-d4C3bGibQw/exec';
         const urlParams = new URLSearchParams(window.location.search);
         const codeFromUrl = urlParams.get('code');
@@ -74,11 +153,9 @@
 
         codeInput.addEventListener('input', function() {
             const currentCode = this.value;
-            // Si el código introducido es diferente al de la URL, oculta el mensaje inicial.
             if (currentCode !== codeFromUrl) {
-                 welcomeMessage.style.display = 'none';
+                welcomeMessage.style.display = 'none';
             }
-            // Cuando se introducen 5 dígitos, busca el nombre.
             if (currentCode.length === 5) {
                 welcomeMessage.style.display = 'block';
                 welcomeMessage.innerHTML = 'Buscando invitado...';
@@ -103,7 +180,6 @@
             const formData = new FormData(form);
             const currentCode = codeInput.value;
 
-            // Solo envía el nombre si el código no ha cambiado y el nombre venía en la URL.
             if (currentCode === codeFromUrl && nameFromUrl) {
                 formData.append('name', nameFromUrl);
             }

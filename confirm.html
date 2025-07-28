@@ -28,31 +28,29 @@
         .info-text { margin-top: 30px; padding-top: 20px; border-top: 1px solid #e0e0e0; font-size: 0.9rem; color: #777; }
         .info-text a { color: #0077b6; font-weight: 600; text-decoration: none; }
 
-        /* --- Estilos de los desplegables (sin cambios) --- */
+        /* --- ESTILOS RESTAURADOS PARA DESPLEGABLES --- */
         .details-section {
-            margin: 20px 0;
+            margin: 25px 0;
             text-align: left;
-            border-top: 1px solid #e0e0e0;
-            padding-top: 20px;
         }
         details {
-            background-color: transparent;
-            border: none;
-            padding: 5px 0;
+            background-color: #f9f9f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            padding: 10px 15px;
         }
         summary {
-            font-weight: 600;
-            color: #555;
+            font-weight: 700;
+            color: #005f73;
             cursor: pointer;
-            font-size: 1rem;
-            outline: none;
+            font-size: 1.1rem;
         }
         .details-content {
-            padding-top: 10px;
-            padding-left: 15px;
+            padding-top: 15px;
         }
         .details-content p {
-            font-size: 0.95rem;
+            font-size: 1rem;
             margin-bottom: 10px;
         }
         .details-content ul {
@@ -74,8 +72,8 @@
             max-width: 100%;
             border-radius: 8px;
             margin-top: 10px;
-            border: 1px solid #e0e0e0;
         }
+        /* --- FIN DE ESTILOS RESTAURADOS --- */
     </style>
 </head>
 <body>
@@ -83,24 +81,41 @@
         <div class="container">
             <h2>Confirmación Final</h2>
             <div id="name-welcome-message" style="display: none;"></div>
-            <p>¡Aloha! Solo un último paso. <br>Por favor, confirma si te unes a nuestra celebración.</p>
 
             <form id="confirmation-form">
                 <div class="form-group">
                     <label for="invite_code" style="font-weight: 700; color: #333;">Mi Código de Invitado:</label>
                     <input type="text" class="form-control" id="invite_code" name="invite_code" placeholder="Escribe tu código aquí..." required maxlength="5">
                 </div>
+                
+                <p>¡Aloha! Solo un último paso. <br>Por favor, confirma si te unes a nuestra celebración.</p>
 
                 <div class="details-section">
                     <details>
-                        <summary>¿Necesitas un recordatorio de los detalles?</summary>
+                        <summary>🗓️ ¿Cuándo es la fiesta?</summary>
                         <div class="details-content">
-                            <p><strong>Fecha:</strong> 13 de sep. 2025, 13:00h</p>
-                            <p><strong>Lugar:</strong> La casita de Pinto, Madrid</p>
+                            <p><strong>Fecha:</strong> 13 de septiembre de 2025</p>
+                            <p><strong>Hora:</strong> A partir de las 13:00h</p>
                             <ul>
                                 <li><a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Boda%20Hawaiana%20de%20Antonio%20y%20V%C3%ADctor&dates=20250913T130000/20250914T000000&details=%C2%A1Nos%20vemos%20en%20la%20fiesta%20m%C3%A1s%20tropical!&location=La%20casita%20de%20Pinto,%20Madrid" target="_blank">Añadir a Google Calendar</a></li>
-                                <li><a href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Boda Hawaiana de Antonio y Víctor%0ADTSTART:20250913T130000%0ADTEND:20250914T000000%0ALOCATION:La casita de Pinto, Madrid%0ADESCRIPTION:¡Nos vemos en la fiesta más tropical!%0AEND:VEVENT%0AEND:VCALENDAR" download="Boda-Hawaiana.ics">Descargar iCal</a></li>
+                                <li><a href="https://outlook.live.com/owa/?path=/calendar/action/compose&subject=Boda%20Hawaiana%20de%20Antonio%20y%20V%C3%ADctor&body=%C2%A1Nos%20vemos%20en%20la%20fiesta%20m%C3%A1s%20tropical!&startdt=2025-09-13T13:00:00&enddt=2025-09-14T00:00:00&location=La%20casita%20de%20Pinto,%20Madrid" target="_blank">Añadir a Outlook</a></li>
+                                <li><a href="data:text/calendar;charset=utf-8,BEGIN:VCALENDAR%0AVERSION:2.0%0ABEGIN:VEVENT%0ASUMMARY:Boda Hawaiana de Antonio y Víctor%0ADTSTART:20250913T130000%0ADTEND:20250914T000000%0ALOCATION:La casita de Pinto, Madrid%0ADESCRIPTION:¡Nos vemos en la fiesta más tropical!%0AEND:VEVENT%0AEND:VCALENDAR" download="Boda-Hawaiana.ics">Descargar para iCal (Apple)</a></li>
                             </ul>
+                        </div>
+                    </details>
+                    <details>
+                        <summary>📍 ¿Dónde está el sarao?</summary>
+                        <div class="details-content">
+                            <p><strong>Lugar:</strong> La casita de Pinto, Madrid.</p>
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d163903.0476306081!2d-3.722867758622369!3d40.241490522102914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd421f006aec1e79%3A0xfa9ea4acc44120a7!2sLa%20Casita%20de%20Pinto%20%7C%20local%20para%20fiestas!5e0!3m2!1ses!2ses!4v1738131472548!5m2!1ses!2ses"
+                                width="100%" 
+                                height="300" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
                         </div>
                     </details>
                 </div>
@@ -112,7 +127,6 @@
             </form>
             
             <div id="response-message"></div>
-
             <div class="info-text">
                 <p>Para ver <strong>todos los detalles</strong> de la boda (vestimenta, regalos, etc.) o si necesitas <strong>cambiar tu asistencia</strong>, por favor, <a href="http://bodahawaiana.gay" target="_blank">visita la web principal</a>.</p>
             </div>
